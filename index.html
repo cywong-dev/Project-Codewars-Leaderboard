@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codewars Leaderboard</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Codewars Leaderboard</h1>
+            <p>Compare Codewars user rankings across overall stats and individual programming languages.</p>
+        </header>
+
+        <!-- Input Form Card -->
+        <section class="card" aria-labelledby="form-heading">
+            <h2 id="form-heading" class="sr-only">Leaderboard Setup</h2>
+            <form id="leaderboard-form">
+                <label for="usernames-input">
+                    Usernames (comma-separated):
+                </label>
+                <input 
+                    type="text" 
+                    id="usernames-input" 
+                    placeholder="e.g. CodeYourFuture, 40thieves, SallyMcGrath" 
+                    required 
+                    aria-required="true"
+                >
+                <button type="submit" id="fetch-btn">Generate Leaderboard</button>
+            </form>
+        </section>
+
+        <!-- Error Container -->
+        <div id="error-container" class="error-message hidden" role="alert" aria-live="polite"></div>
+
+        <!-- Leaderboard Display Section -->
+        <section id="leaderboard-section" class="card hidden" aria-labelledby="leaderboard-heading">
+            <h2 id="leaderboard-heading" class="sr-only">Leaderboard Results</h2>
+            
+            <div class="controls-row">
+                <label for="language-select">
+                    Select Ranking View:
+                    <select id="language-select" aria-label="Select Ranking View">
+                        <option value="overall">Overall Ranking</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <caption>Leaderboard Rankings</caption>
+                    <thead style="border: 1px solid #334155;">
+                        <tr>
+                            <th style="border: 1px solid #334155;" scope="col">Username</th>
+			    <th style="border: 1px solid #334155;" scope="col">Clan</th>
+                            <th style="border: 1px solid #334155;" scope="col">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Populated dynamically via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
