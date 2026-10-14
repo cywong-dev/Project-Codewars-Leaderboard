@@ -231,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export functions for Jest unit testing
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        extractAvailableLanguages,
-        getLeaderboardData
+        extractAvailableLanguages
     };
 }
