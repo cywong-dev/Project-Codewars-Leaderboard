@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (successfulUsers.length === 0) {
                 showError(errorMessages.join(' '));
-           	clearTable();
+           	    clearTable();
                 return;
             }
 
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function clearTable() {
-	leaderboardBody.innerHTML = '';
+	        leaderboardBody.innerHTML = '';
     }
 
     function renderTable(usersData, selectedLanguage) {
